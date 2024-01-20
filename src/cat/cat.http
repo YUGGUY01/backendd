@@ -1,0 +1,53 @@
+@hostname = 127.0.0.1
+@port = 3000
+@serverUrl = http://{{hostname}}:{{port}}
+@baseUrl = http://{{hostname}}:{{port}} 
+
+
+
+###
+GET {{baseUrl}}//cat
+
+###
+GET {{baseUrl}}/cat/1
+
+###
+POST {{baseUrl}}/cat 
+Content-Type: application/json 
+
+{ 
+    "name":"JOHN",
+    "color":"black",
+    "description" : "john descrition",
+    "profile" : {
+        "father" : " Brown",
+        "mother" : "Patty"
+    },
+    "foods" : [
+        {
+            "name" : "MIO",
+            "type" : "Main Food",
+        },
+        {
+            "name" : "MIO Creamey",
+            "type" : "Snake",
+        }
+    ]
+}
+
+###
+PUT  {{baseUrl}}/cat/1
+Content-Type: application/json
+{ 
+    "id" : 1 ,
+    "name":"JOHN",
+    "color":"white",
+    "descriotion" : "john description"
+} 
+###
+
+DELETE {{baseUrl}}/cat/2
+
+
+
+
